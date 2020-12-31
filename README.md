@@ -1,11 +1,11 @@
 # terraform-azuredevops-project
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![GitHub license](https://img.shields.io/github/license/bcochofel/terraform-azurerm-modules.svg)](https://github.com/bcochofel/terraform-azurerm-modules/blob/master/LICENSE)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/bcochofel/terraform-azurerm-modules)](https://github.com/bcochofel/terraform-azurerm-modules/tags)
-[![GitHub issues](https://img.shields.io/github/issues/bcochofel/terraform-azurerm-modules.svg)](https://github.com/bcochofel/terraform-azurerm-modules/issues/)
-[![GitHub forks](https://img.shields.io/github/forks/bcochofel/terraform-azurerm-modules.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/bcochofel/terraform-azurerm-modules/network/)
-[![GitHub stars](https://img.shields.io/github/stars/bcochofel/terraform-azurerm-modules.svg?style=social&label=Star&maxAge=2592000)](https://github.com/bcochofel/terraform-azurerm-modules/stargazers/)
+[![GitHub license](https://img.shields.io/github/license/bcochofel/terraform-azuredevops-project.svg)](https://github.com/bcochofel/terraform-azuredevops-project/blob/master/LICENSE)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/bcochofel/terraform-azuredevops-project)](https://github.com/bcochofel/terraform-azuredevops-project/tags)
+[![GitHub issues](https://img.shields.io/github/issues/bcochofel/terraform-azuredevops-project.svg)](https://github.com/bcochofel/terraform-azuredevops-project/issues/)
+[![GitHub forks](https://img.shields.io/github/forks/bcochofel/terraform-azuredevops-project.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/bcochofel/terraform-azuredevops-project/network/)
+[![GitHub stars](https://img.shields.io/github/stars/bcochofel/terraform-azuredevops-project.svg?style=social&label=Star&maxAge=2592000)](https://github.com/bcochofel/terraform-azuredevops-project/stargazers/)
 
 This module creates the following resources:
 * Resource Group (AzureRM)
