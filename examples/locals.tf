@@ -42,7 +42,7 @@ locals {
     },
     {
       name      = "TF_BACKEND_CONTAINER_NAME"
-      value     = module.st.st_containers[0].name
+      value     = module.st.st_containers[0]
       is_secret = false
     }
   ]
