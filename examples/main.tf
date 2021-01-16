@@ -44,7 +44,7 @@ module "project" {
 }
 
 module "rg" {
-  source = "github.com/bcochofel/terraform-azurerm-modules//modules/resource_group?ref=v1.4.0"
+  source = "github.com/bcochofel/terraform-azurerm-modules//modules/resource_group?ref=0.2.0"
 
   name        = "rg-demolab-tf-001"
   location    = "northeurope"
@@ -52,7 +52,7 @@ module "rg" {
 }
 
 module "st" {
-  source = "github.com/bcochofel/terraform-azurerm-modules//modules/storage_account?ref=v1.4.0"
+  source = "github.com/bcochofel/terraform-azurerm-modules//modules/storage_account?ref=0.2.0"
 
   name                = "stdemolabtf001"
   resource_group_name = module.rg.rg_name
