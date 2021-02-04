@@ -46,7 +46,7 @@ module "project" {
 module "rg" {
   source = "github.com/bcochofel/terraform-azurerm-modules//modules/resource_group?ref=0.2.0"
 
-  name        = "rg-demolab-tf-001"
+  name        = "rg-tf-demolab-001"
   location    = "northeurope"
   custom_tags = var.tags
 }
@@ -54,11 +54,11 @@ module "rg" {
 module "st" {
   source = "github.com/bcochofel/terraform-azurerm-modules//modules/storage_account?ref=0.2.0"
 
-  name                = "stdemolabtf001"
+  name                = "sttfdemolab001"
   resource_group_name = module.rg.rg_name
   containers = [
     {
-      name        = "scdemolabtf001"
+      name        = "sctfdemolab001"
       access_type = "private"
     }
   ]
