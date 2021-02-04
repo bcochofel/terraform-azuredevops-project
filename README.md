@@ -3,16 +3,9 @@
 [![pre-commit badge][pre-commit-badge]][pre-commit] [![Conventional commits badge][conventional-commits-badge]][conventional-commits] [![Keep a Changelog v1.1.0 badge][keep-a-changelog-badge]][keep-a-changelog] [![MIT License Badge][license-badge]][license]
 
 This module creates the following resources:
-* Resource Group (AzureRM)
-* Storage Account (AzureRM)
-* Storage Container (AzureRM)
 * Azure DevOps Project
 * Variable Group
 * GitHub Service Connection
-
-The variable group can be used for Terraform pipelines to inject Environment Variables needed for
-provider authentication (currently has all the env vars needed for both AzureRM and AzureDevOps providers besides
-the secrets that must be added manually to a different variable group).
 
 # pre-commit hooks
 
