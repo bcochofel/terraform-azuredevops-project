@@ -11,7 +11,7 @@ This module creates the following resources:
 * GitHub Service Connection
 
 The variable group can be used for Terraform pipelines to inject Environment Variables needed for
-provider authentication (currently as all the env vars needed for both AzureRM and AzureDevOps providers besides
+provider authentication (currently has all the env vars needed for both AzureRM and AzureDevOps providers besides
 the secrets that must be added manually to a different variable group).
 
 # pre-commit hooks
@@ -21,10 +21,6 @@ Read the [pre-commit hooks](docs/pre-commit-hooks.md) document for more info.
 # git-chglog
 
 Read the [git-chglog](docs/git-chlog.md) document for more info.
-
-# Running tests
-
-On the `test` folder execute `go test -v` to run all the tests.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
