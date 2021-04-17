@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="0.2.1"></a>
+## [0.2.1] - 2021-04-17
+### Feat
+- add key vault
+
+
 <a name="0.2.0"></a>
 ## 0.2.0 - 2021-02-04
 ### Chore
@@ -19,6 +25,7 @@
 - github workflows
 
 ### Pull Requests
+- Merge pull request [#7](https://github.com/bcochofel/terraform-azuredevops-project/issues/7) from bcochofel/minor_fixes
 - Merge pull request [#6](https://github.com/bcochofel/terraform-azuredevops-project/issues/6) from bcochofel/gh-workflow
 - Merge pull request [#5](https://github.com/bcochofel/terraform-azuredevops-project/issues/5) from bcochofel/azuredevops-proj
 - Merge pull request [#4](https://github.com/bcochofel/terraform-azuredevops-project/issues/4) from bcochofel/docs-update
@@ -27,4 +34,5 @@
 - Merge pull request [#1](https://github.com/bcochofel/terraform-azuredevops-project/issues/1) from bcochofel/first-commit
 
 
-[Unreleased]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.0...0.2.1
