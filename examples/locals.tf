@@ -32,17 +32,17 @@ locals {
     },
     {
       name      = "TF_BACKEND_RESOURCE_GROUP_NAME"
-      value     = module.rg.rg_name
+      value     = module.rg.name
       is_secret = false
     },
     {
       name      = "TF_BACKEND_STORAGE_ACCOUNT_NAME"
-      value     = module.st.st_name
+      value     = module.st.name
       is_secret = false
     },
     {
       name      = "TF_BACKEND_CONTAINER_NAME"
-      value     = module.st.st_containers[0]
+      value     = module.st.containers["scdemolab001"].name
       is_secret = false
     }
   ]

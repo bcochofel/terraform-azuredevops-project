@@ -20,43 +20,54 @@ Read the [git-chglog](docs/git-chlog.md) document for more info.
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13 |
-| azuredevops | >= 0.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | >= 0.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azuredevops | >= 0.1.0 |
+| <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) | >= 0.1.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azuredevops_project.proj](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) | resource |
+| [azuredevops_serviceendpoint_github.gh](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/serviceendpoint_github) | resource |
+| [azuredevops_variable_group.vg](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/variable_group) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| github\_pat | The Personal Access Token for Github. | `string` | n/a | yes |
-| github\_serviceendpoint\_description | GitHub Service Endpoint description. | `string` | `"Managed by Terraform"` | no |
-| github\_serviceendpoint\_name | GitHub Service Endpoint name. | `string` | n/a | yes |
-| proj\_description | Azure DevOps Project description. | `string` | n/a | yes |
-| proj\_features | Project features. | `map(string)` | <pre>{<br>  "artifacts": "disabled",<br>  "boards": "disabled",<br>  "pipelines": "enabled",<br>  "repositories": "enabled",<br>  "testplans": "disabled"<br>}</pre> | no |
-| proj\_name | Azure DevOps Project name. | `string` | n/a | yes |
-| proj\_vcs | Project Version Control. | `string` | `"Git"` | no |
-| proj\_visibility | Project visibility. | `string` | `"private"` | no |
-| proj\_wi\_template | Project Work Item template. | `string` | `"Agile"` | no |
-| vg\_allow\_access | Boolean that indicate if this variable group is shared by all pipelines of this project. | `bool` | `false` | no |
-| vg\_description | The description of the Variable Group. | `string` | n/a | yes |
-| vg\_name | The name of the Variable Group. | `string` | n/a | yes |
-| vg\_variables | One or more variable blocks as documented below.<br><br>A variable block supports the following:<br><br>  * name - (Required) The key value used for the variable. Must be unique within the Variable Group.<br>  * value - (Optional) The value of the variable. If omitted, it will default to empty string.<br>  * is\_secret - (Optional) A boolean flag describing if the variable value is sensitive. Defaults to false. | <pre>list(object({<br>    name      = string<br>    value     = string<br>    is_secret = bool<br>  }))</pre> | `[]` | no |
+| <a name="input_github_pat"></a> [github\_pat](#input\_github\_pat) | The Personal Access Token for Github. | `string` | n/a | yes |
+| <a name="input_github_serviceendpoint_description"></a> [github\_serviceendpoint\_description](#input\_github\_serviceendpoint\_description) | GitHub Service Endpoint description. | `string` | `"Managed by Terraform"` | no |
+| <a name="input_github_serviceendpoint_name"></a> [github\_serviceendpoint\_name](#input\_github\_serviceendpoint\_name) | GitHub Service Endpoint name. | `string` | n/a | yes |
+| <a name="input_proj_description"></a> [proj\_description](#input\_proj\_description) | Azure DevOps Project description. | `string` | n/a | yes |
+| <a name="input_proj_features"></a> [proj\_features](#input\_proj\_features) | Project features. | `map(string)` | <pre>{<br>  "artifacts": "disabled",<br>  "boards": "disabled",<br>  "pipelines": "enabled",<br>  "repositories": "enabled",<br>  "testplans": "disabled"<br>}</pre> | no |
+| <a name="input_proj_name"></a> [proj\_name](#input\_proj\_name) | Azure DevOps Project name. | `string` | n/a | yes |
+| <a name="input_proj_vcs"></a> [proj\_vcs](#input\_proj\_vcs) | Project Version Control. | `string` | `"Git"` | no |
+| <a name="input_proj_visibility"></a> [proj\_visibility](#input\_proj\_visibility) | Project visibility. | `string` | `"private"` | no |
+| <a name="input_proj_wi_template"></a> [proj\_wi\_template](#input\_proj\_wi\_template) | Project Work Item template. | `string` | `"Agile"` | no |
+| <a name="input_vg_allow_access"></a> [vg\_allow\_access](#input\_vg\_allow\_access) | Boolean that indicate if this variable group is shared by all pipelines of this project. | `bool` | `false` | no |
+| <a name="input_vg_description"></a> [vg\_description](#input\_vg\_description) | The description of the Variable Group. | `string` | n/a | yes |
+| <a name="input_vg_name"></a> [vg\_name](#input\_vg\_name) | The name of the Variable Group. | `string` | n/a | yes |
+| <a name="input_vg_variables"></a> [vg\_variables](#input\_vg\_variables) | One or more variable blocks as documented below.<br><br>A variable block supports the following:<br><br>  * name - (Required) The key value used for the variable. Must be unique within the Variable Group.<br>  * value - (Optional) The value of the variable. If omitted, it will default to empty string.<br>  * is\_secret - (Optional) A boolean flag describing if the variable value is sensitive. Defaults to false. | <pre>list(object({<br>    name      = string<br>    value     = string<br>    is_secret = bool<br>  }))</pre> | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| ghsc\_name | n/a |
-| proj\_id | n/a |
-| proj\_name | n/a |
-| vg\_id | n/a |
-| vg\_name | n/a |
-
+| <a name="output_ghsc_name"></a> [ghsc\_name](#output\_ghsc\_name) | n/a |
+| <a name="output_proj_id"></a> [proj\_id](#output\_proj\_id) | n/a |
+| <a name="output_proj_name"></a> [proj\_name](#output\_proj\_name) | n/a |
+| <a name="output_vg_id"></a> [vg\_id](#output\_vg\_id) | n/a |
+| <a name="output_vg_name"></a> [vg\_name](#output\_vg\_name) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # References
