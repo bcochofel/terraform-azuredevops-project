@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.13.0"
+  required_version = ">= 0.14.0"
 
   required_providers {
     azuredevops = {
@@ -16,7 +16,7 @@ terraform {
     }
   }
 
-  backend "azurerm" {}
+  #  backend "azurerm" {}
 }
 
 provider "azuredevops" {}
@@ -44,24 +44,75 @@ module "project" {
 }
 
 module "rg" {
-  source = "github.com/bcochofel/terraform-azurerm-modules//modules/resource_group?ref=0.2.0"
+  source  = "bcochofel/resource-group/azurerm"
+  version = "1.4.1"
 
-  name        = "rg-tf-demolab-001"
-  location    = "northeurope"
-  custom_tags = var.tags
+  name     = "rg-demolab-001"
+  location = "North Europe"
+
+  tags = {
+    ManagedBy = "Terraform"
+    Project   = "DemoLab"
+  }
 }
 
 module "st" {
-  source = "github.com/bcochofel/terraform-azurerm-modules//modules/storage_account?ref=0.2.0"
+  source  = "bcochofel/storage-account/azurerm"
+  version = "1.1.0"
 
-  name                = "sttfdemolab001"
-  resource_group_name = module.rg.rg_name
+  name                = "stdemolab001"
+  resource_group_name = module.rg.name
+
   containers = [
     {
-      name        = "sctfdemolab001"
-      access_type = "private"
+      name = "scdemolab001"
     }
   ]
 
+  tags = {
+    ManagedBy = "Terraform"
+    Project   = "DemoLab"
+  }
+
   depends_on = [module.rg]
+}
+
+resource "azurerm_key_vault" "example" {
+  name                       = "kvdemolab001"
+  location                   = module.rg.location
+  resource_group_name        = module.rg.name
+  tenant_id                  = data.azurerm_client_config.current.tenant_id
+  sku_name                   = "premium"
+  soft_delete_retention_days = 7
+
+  access_policy {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azurerm_client_config.current.object_id
+
+    key_permissions = [
+      "create",
+      "get",
+    ]
+
+    secret_permissions = [
+      "set",
+      "get",
+      "delete",
+      "purge",
+      "recover"
+    ]
+  }
+
+  tags = {
+    ManagedBy = "Terraform"
+    Project   = "DemoLab"
+  }
+
+  depends_on = [module.rg]
+}
+
+resource "azurerm_key_vault_secret" "example" {
+  name         = "secret-sauce"
+  value        = "szechuan"
+  key_vault_id = azurerm_key_vault.example.id
 }

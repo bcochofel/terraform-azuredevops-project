@@ -4,9 +4,11 @@ This example bootstraps Azure DevOps Project with variable group with
 Terraform secrets so it can be used on pipelines.
 
 This module creates the following resources:
+
 * Resource Group (AzureRM)
 * Storage Account (AzureRM)
 * Storage Container (AzureRM)
+* Key Vault (AzureRM)
 * Azure DevOps Project
 * Variable Group
 * GitHub Service Connection
@@ -20,27 +22,43 @@ the secrets that must be added manually to a different variable group).
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| azuredevops | ~> 0.1.0 |
-| azurerm | ~> 2.41.0 |
-| template | ~> 2.1.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.0 |
+| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | ~> 0.1.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 2.41.0 |
+| <a name="requirement_template"></a> [template](#requirement\_template) | ~> 2.1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azuredevops | ~> 0.1.0 |
-| azurerm | ~> 2.41.0 |
+| <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) | ~> 0.1.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 2.41.0 |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_project"></a> [project](#module\_project) | ../ |  |
+| <a name="module_rg"></a> [rg](#module\_rg) | bcochofel/resource-group/azurerm | 1.4.1 |
+| <a name="module_st"></a> [st](#module\_st) | bcochofel/storage-account/azurerm | 1.1.0 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_key_vault.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_secret.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
+| [azuredevops_client_config.current](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/client_config) | data source |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| github\_pat | n/a | `any` | n/a | yes |
-| tags | n/a | `map(string)` | <pre>{<br>  "Environment": "management"<br>}</pre> | no |
+| <a name="input_github_pat"></a> [github\_pat](#input\_github\_pat) | n/a | `any` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | <pre>{<br>  "Environment": "management"<br>}</pre> | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
