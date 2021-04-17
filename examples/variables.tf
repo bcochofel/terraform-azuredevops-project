@@ -1,8 +1,11 @@
 variable "github_pat" {}
+variable "users_object_ids" {}
 
 variable "tags" {
   type = map(string)
   default = {
-    Environment = "management"
+    ManagedBy   = "Terraform"
+    Project     = "DemoLab"
+    Environment = "Management"
   }
 }
