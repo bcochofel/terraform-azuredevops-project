@@ -31,6 +31,7 @@ the secrets that must be added manually to a different variable group).
 
 | Name | Version |
 |------|---------|
+| <a name="provider_azuread"></a> [azuread](#provider\_azuread) | n/a |
 | <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) | ~> 0.1.0 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 2.41.0 |
 
@@ -46,8 +47,10 @@ the secrets that must be added manually to a different variable group).
 
 | Name | Type |
 |------|------|
-| [azurerm_key_vault.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
-| [azurerm_key_vault_secret.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
+| [azuread_group.kv](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group) | resource |
+| [azurerm_key_vault.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_access_policy.kvusers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_access_policy.sp](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azuredevops_client_config.current](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/data-sources/client_config) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 
@@ -56,7 +59,8 @@ the secrets that must be added manually to a different variable group).
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_github_pat"></a> [github\_pat](#input\_github\_pat) | n/a | `any` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | <pre>{<br>  "Environment": "management"<br>}</pre> | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | <pre>{<br>  "Environment": "Management",<br>  "ManagedBy": "Terraform",<br>  "Project": "DemoLab"<br>}</pre> | no |
+| <a name="input_users_object_ids"></a> [users\_object\_ids](#input\_users\_object\_ids) | n/a | `any` | n/a | yes |
 
 ## Outputs
 
