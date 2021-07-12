@@ -2,10 +2,16 @@
 ## [Unreleased]
 
 
+<a name="0.2.3"></a>
+## [0.2.3] - 2021-07-12
+
 <a name="0.2.2"></a>
 ## [0.2.2] - 2021-04-17
 ### Feat
 - key vault access policies
+
+### Pull Requests
+- Merge pull request [#9](https://github.com/bcochofel/terraform-azuredevops-project/issues/9) from bcochofel:kv_access_policies
 
 
 <a name="0.2.1"></a>
@@ -43,6 +49,7 @@
 - Merge pull request [#1](https://github.com/bcochofel/terraform-azuredevops-project/issues/1) from bcochofel/first-commit
 
 
-[Unreleased]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.2...HEAD
+[Unreleased]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.3...HEAD
+[0.2.3]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/bcochofel/terraform-azuredevops-project/compare/0.2.0...0.2.1
